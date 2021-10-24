@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+}
+
+html,
+body {
+  --black: hsl(240, 6%, 13%);
+  --gray: hsl(
+    240,
+    9%,
+    89%
+  ); /*"--gray" é um metodo de criar variavel para usar em outros ids ou class */
+
+  height: 100%; /*altura*/
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased; /*para navegadores que tem o webkit*/
+}
+
+body {
+  display: grid; /*maneira de visualização dos meus elementos*/
+  place-items: center; /*sig: colocar os intens centralizados ao meio.*/
+}
+
+main {
+  /*caixa princiapl do projeto.*/
+  background: url(imagens/background.svg) no-repeat center/cover;
+  width: 100vw;
+  min-height: 812px;
+  height: 100vhv;
+}
+
+.container {
+  max-width: 250px; /*largura maxíma definida*/
+  margin-left: auto; /*margem lateral esquerda definida automaticamente*/
+  margin-right: auto; /*margem lateral direita definida automaticamente*/
+  text-align: center; /*alinhamento centralizado do container*/
+  color: var(--gray); /*usando a variavel ciada com uma determinada cor */
+}
+
+.avatar {
+  width: 10rem; /*largura*/ /*10rem = 160px*/
+  margin: 11.5rem auto 0;
+
+  position: relative; /* significa que ele está sobre o comando do position abaixo*/
+}
+
+.avatar span {
+  /*aqui permite que procure dentro da classe avatar o "span"*/
+  position: absolute; /*serve como um empilhamento, deixar algo sobre outro*/
+  top: -15px; /* desloca o objeto 15px para cima */
+  z-index: 1; /*usado para que a imagem continue sobre a outra*/
+}
+
+.avatar > img {
+  /* essa seta de maior vai da a propridada para a primeira imagem fora do span */
+
+  width: 10rem; /*largura*/
+  height: 11.5rem; /*altura*/
+  object-fit: cover; /*vai cobrir de acordo com as larguras informada acima */
+
+
+  clip-path: polygon(
+    50% 0,
+    100% 25%,
+    100% 75%,
+    50% 100%,
+    0 75%,
+    0 25%
+  ); /*para deixar a imagem em forma de poligno*/
+}
+
+h1 {
+  font-size: 1.5rem;
+
+  margin-top: 1.5rem;
+}
+
+a {
+  color: var(--grey);
+  text-decoration: none;
+
+  margin-top: 0.25rem;
+
+  display: flex; /*para deixar um elemento ao lado do outro*/
+  gap: 0.75rem; /*para deixar um espaçamento entre os elementos*/
+
+  justify-content: center; /*para centralizar os elementos ao centro*/
+  align-items: center; /*para garantir a centralização os elementos entre os eixos X e Y */
+}
+
+p {
+  margin-top: 2rem;
+}
+
+ul {
+  margin-top: 3rem;
+
+  list-style: none; /*para retirar as bolinhas da tela*/
+  padding: 0;
+  display: flex; /*usado para deixar um elemento ao lado do outro */
+  gap: 0.5rem; /*para deixar o espaçamento entre os elementos*/
+  justify-content: center; /*para deixar os elementos centralizado ao meio*/
+}
